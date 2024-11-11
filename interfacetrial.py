@@ -5,15 +5,15 @@ import tkinter.messagebox
 # Creation of the main window
 master = Tk()
 master.title("Tic Tac Toe")
-master.geometry("800x600")  # Moderate size for centered layout
+master.geometry("800x700")  # Adjusted size for 4x4 grid
 master.configure(bg="#F5F5F5")  # Very light grey background
 
 # Center the window on the screen
 screen_width = master.winfo_screenwidth()
 screen_height = master.winfo_screenheight()
 x_cordinate = int((screen_width/2) - (800/2))
-y_cordinate = int((screen_height/2) - (600/2))
-master.geometry(f"800x600+{x_cordinate}+{y_cordinate}")
+y_cordinate = int((screen_height/2) - (700/2))
+master.geometry(f"800x700+{x_cordinate}+{y_cordinate}")
 
 # Style configurations
 s = ttk.Style()
@@ -51,10 +51,10 @@ def set_difficulty(level):
     print(f"Difficulty set to: {level}")
     # Adjust the depth of AI search based on difficulty here
 
-# Displaying game buttons in a 3x3 grid
+# Displaying game buttons in a 4x4 grid
 buttons = []
-for i in range(3):
-    for j in range(3):
+for i in range(4):
+    for j in range(4):
         btn = ttk.Button(frame2, text=' ', style="mod2.TButton")
         btn.grid(row=i, column=j, ipadx=30, ipady=30, padx=5, pady=5)
         buttons.append(btn)
